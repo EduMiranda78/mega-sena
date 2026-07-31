@@ -39,6 +39,7 @@ Cada execução produz cinco jogos únicos. No modo ponderado, também são apli
 - Healthcheck em `/health`.
 - Interface responsiva para desktop e celular.
 - Testes automatizados com `unittest`.
+- Execução automática dos testes no GitHub Actions.
 
 ## Tecnologias
 
@@ -54,6 +55,9 @@ Cada execução produz cinco jogos únicos. No modo ponderado, também são apli
 
 ```text
 mega-sena/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
 ├── app.py
 ├── requirements.txt
 ├── README.md
@@ -228,6 +232,8 @@ Execute a suíte completa:
 python -m unittest discover -s tests -v
 ```
 
+O mesmo comando é executado automaticamente pelo workflow `.github/workflows/tests.yml` em pushes para `main`, branches `agent/**` e pull requests destinados à `main`.
+
 Os testes cobrem:
 
 - leitura e normalização de CSV;
@@ -237,6 +243,7 @@ Os testes cobrem:
 - geração de jogos únicos;
 - filtros do modo ponderado;
 - resposta da página inicial;
+- carregamento da folha de estilos;
 - upload e geração de jogos;
 - healthcheck.
 
@@ -268,7 +275,6 @@ Nunca publique chaves, arquivos `.env`, históricos privados ou o conteúdo do d
 - Histórico local das últimas gerações.
 - Quantidade configurável de jogos.
 - Containerização com Docker.
-- Pipeline de testes no GitHub Actions.
 - Configuração pronta para serviço `systemd` e Nginx.
 
 ## Autor
