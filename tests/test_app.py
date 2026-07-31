@@ -78,6 +78,12 @@ class MegaSenaTestCase(unittest.TestCase):
         resposta = self.client.get("/")
         self.assertEqual(resposta.status_code, 200)
         self.assertIn(b"Mega Sena Master", resposta.data)
+        self.assertIn(b"/static/styles.css", resposta.data)
+
+    def test_folha_de_estilos_responde(self):
+        resposta = self.client.get("/static/styles.css")
+        self.assertEqual(resposta.status_code, 200)
+        self.assertIn(b"--primary", resposta.data)
 
     def test_upload_csv_gera_cinco_jogos(self):
         dados = {
