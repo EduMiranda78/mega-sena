@@ -279,7 +279,8 @@ Nunca publique chaves, arquivos `.env`, históricos privados ou o conteúdo do d
 
 ## Autor
 
-Desenvolvido por [Eduardo Miranda](https://github.com/EduMiranda78).
+Desenvolvido por [Eduardo Miranda](https://github.com/EduMiranda78).  
+Site: [Miranda Stack](https://mirandastack.com/)
 
 ## Licença
 
